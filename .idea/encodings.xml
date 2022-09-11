@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/spring-cloud-commentservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-commentservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-eureka-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-eureka-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-geccoservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-geccoservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-rateservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-rateservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-viewservice" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-viewservice/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-zuul" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dbd.mapper.RateMapper">
+
+    <resultMap id="topicVO" type="com.dbd.model.entity.Rate">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="sperk_id" property="sperkId"/>
+        <result column="appearance" property="appearance"/>
+        <result column="popularity" property="popularity"/>
+        <result column="title" property="title"/>
+        <result column="imgUrl" property="imgUrl"/>
+    </resultMap>
+
+    <resultMap id="topicUO" type="com.dbd.model.vo.PostVO">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="resource" property="resource"/>
+        <result column="description" property="description"/>
+        <result column="imgUrl" property="imgUrl"/>
+        <result column="appearance" property="appearance"/>
+        <result column="popularity" property="popularity"/>
+        <result column="content" property="content"/>
+        <result column="user_id" property="userId"/>
+        <result column="comments" property="comments"/>
+        <result column="perk_id" property="perkId"/>
+        <result column="like_number" property="like_number"/>
+        <result column="top" property="top"/>
+        <result column="essence" property="essence"/>
+        <result column="create_time" property="createTime"/>
+        <result column="modify_time" property="modifyTime"/>
+    </resultMap>
+
+    <select id="getRate" parameterType="com.dbd.model.vo.PerkUserVO" resultMap="topicVO">
+        SELECT *
+        FROM user_sperk_rate
+        where user_id = #{userId}
+        and sperk_id = #{perkId}
+    </select>
+
+
+    <delete id="deleteRate" parameterType="com.dbd.model.vo.PerkUserVO" >
+        delete from user_sperk_rate
+        where user_id = #{userId}
+        and sperk_id = #{perkId}
+    </delete>
+
+    <select id="rateByUserSurvivor" parameterType="com.dbd.model.entity.User" resultMap="topicVO">
+        SELECT
+            s.id,s.title,s.resource,s.description,
+            s.imgUrl,s.appearance,s.popularity
+        from survivorperks s
+        join user_sperk_rate u on s.id = u.perk_id
+        where u.user_id = #{user.id}
+    </select>
+
+</mapper>

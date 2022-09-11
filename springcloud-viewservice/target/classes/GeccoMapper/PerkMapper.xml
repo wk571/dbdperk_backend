@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//MyBatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置映射
+namespace : 命名空间(通俗说法: 给当前映射文件的唯一标识:起一个唯一的名字)
+-->
+<mapper namespace="gecco.mapper.PerkMapper">
+    <insert id="insert" parameterType="gecco.pojo.Perk">
+        insert into survivorperks (title, resource, description, imgUrl) values (#{title},#{resource},#{description}, #{imgUrl});
+    </insert>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-commentservice/spring-cloud-commentservice.iml" filepath="$PROJECT_DIR$/spring-cloud-commentservice/spring-cloud-commentservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-eureka-consumer/springcloud-eureka-consumer.iml" filepath="$PROJECT_DIR$/springcloud-eureka-consumer/springcloud-eureka-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-eureka-server/springcloud-eureka-server.iml" filepath="$PROJECT_DIR$/springcloud-eureka-server/springcloud-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-geccoservice/springcloud-geccoservice.iml" filepath="$PROJECT_DIR$/springcloud-geccoservice/springcloud-geccoservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-rateservice/springcloud-rateservice.iml" filepath="$PROJECT_DIR$/springcloud-rateservice/springcloud-rateservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud-viewservice/springcloud-viewservice.iml" filepath="$PROJECT_DIR$/springcloud-viewservice/springcloud-viewservice.iml" />
+    </modules>
+  </component>
+</project>

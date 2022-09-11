@@ -1,0 +1,60 @@
+server:
+  port: 8706 # 服务提供方
+
+# 指定当前eureka客户端的注册地址,
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8700/eureka/
+  instance:
+    hostname: localhost
+
+#当前服务名称
+spring:
+  application:
+    name: eureka-viewservice
+  #  main:
+  #    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1214678844
+    url: jdbc:mysql://localhost:3306/dbd?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=GMT%2B8
+    type: com.zaxxer.hikari.HikariDataSource
+
+    quartz:
+      # 将任务等保存化到数据库
+      job-store-type: jdbc
+      # 程序结束时会等待quartz相关的内容结束
+      wait-for-jobs-to-complete-on-shutdown: true
+      # QuartzScheduler启动时更新己存在的Job,这样就不用每次修改targetObject后删除qrtz_job_details表对应记录
+      overwrite-existing-jobs: true
+      # 这里居然是个map，搞得智能提示都没有，佛了
+      properties:
+        org:
+          quartz:
+            # scheduler相关
+            scheduler:
+              # scheduler的实例名
+              instanceName: scheduler
+              instanceId: AUTO
+            # 持久化相关
+            jobStore:
+              class: org.quartz.impl.jdbcjobstore.JobStoreTX
+              driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+              # 表示数据库中相关表是QRTZ_开头的
+              tablePrefix: QRTZ_
+              useProperties: false
+            # 线程池相关
+            threadPool:
+              class: org.quartz.simpl.SimpleThreadPool
+              # 线程数
+              threadCount: 10
+              # 线程优先级
+              threadPriority: 5
+              threadsInheritContextClassLoaderOfInitializingThread: true
+
+logging:
+  level:
+    root: info
+    com.dbd: debug

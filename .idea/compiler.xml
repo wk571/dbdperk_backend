@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-commentservice" />
+        <module name="springcloud-eureka-consumer" />
+        <module name="springcloud-eureka-server" />
+        <module name="springcloud-eureka-serviceconsumer" />
+        <module name="springcloud-geccoservice" />
+        <module name="springcloud-rateservice" />
+        <module name="springcloud-viewservice" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-cloud-commentservice" target="1.8" />
+      <module name="springcloud-eureka-consumer" target="1.8" />
+      <module name="springcloud-eureka-server" target="1.8" />
+      <module name="springcloud-geccoservice" target="1.8" />
+      <module name="springcloud-rateservice" target="1.8" />
+      <module name="springcloud-viewservice" target="1.8" />
+      <module name="springcloud-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-cloud-commentservice" options="-parameters" />
+      <module name="springcloud-eureka-consumer" options="-parameters" />
+      <module name="springcloud-geccoservice" options="-parameters" />
+      <module name="springcloud-rateservice" options="-parameters" />
+      <module name="springcloud-viewservice" options="-parameters" />
+      <module name="springcloud-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>

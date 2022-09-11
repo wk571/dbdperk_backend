@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/springcloud-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-eureka-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-geccoservice/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-commentservice/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-rateservice/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-viewservice/pom.xml" />
+        <option value="$PROJECT_DIR$/springcloud-zuul/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="14" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

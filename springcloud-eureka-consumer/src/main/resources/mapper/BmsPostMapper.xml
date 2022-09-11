@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dbd.mapper.BmsTopicMapper">
+    <resultMap id="topicVO" type="com.dbd.model.vo.PostVO">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="resource" property="resource"/>
+        <result column="description" property="description"/>
+        <result column="imgUrl" property="imgUrl"/>
+        <result column="appearance" property="appearance"/>
+        <result column="popularity" property="popularity"/>
+        <result column="content" property="content"/>
+        <result column="user_id" property="userId"/>
+        <result column="comments" property="comments"/>
+        <result column="perk_id" property="perkId"/>
+        <result column="like_number" property="like_number"/>
+        <result column="top" property="top"/>
+        <result column="essence" property="essence"/>
+        <result column="create_time" property="createTime"/>
+        <result column="modify_time" property="modifyTime"/>
+
+        <!--<result column="view" property="view"/>-->
+        <!--<result column="collects" property="collects"/>-->
+
+        <!--<result column="username" property="username"/>-->
+        <!--<result column="alias" property="alias"/>-->
+        <!--<result column="avatar" property="avatar"/>-->
+    </resultMap>
+
+    <select id="selectListAndPage" resultMap="topicVO">
+        SELECT
+        id,title,resource,description,
+        imgUrl,appearance,popularity
+        FROM survivorperks
+        order by appearance desc
+    </select>
+
+    <select id="selectListAndPageKiller" resultMap="topicVO">
+        SELECT
+            s.id,s.title,s.resource,s.description,
+            s.imgUrl,s.appearance,s.popularity
+        FROM killerperks s
+        order by s.appearance desc
+    </select>
+
+    <select id="selectRecommend" resultType="gecco.pojo.Perk">
+        select *
+        from survivorperks s
+        where s.id != #{id}
+        order by rand(), s.appearance
+        limit 10
+    </select>
+
+    <select id="searchByKey" resultMap="topicVO">
+        SELECT t.id,
+        t.title,
+        t.resource,
+        t.description,
+        t.imgUrl,
+        t.appearance,
+        t.popularity
+        FROM survivorperks t
+--          LEFT JOIN user u
+--          ON t.user_id = u.id
+        <where>
+            <if test="keyword!=null">
+                and t.title like CONCAT('%','${keyword}')
+                or t.title like CONCAT('${keyword}','%')
+                or t.title like CONCAT('%','${keyword}','%')
+                or t.title = #{keyword}
+            </if>
+        </where>
+        order by t.popularity desc, t.appearance desc
+    </select>
+
+    <select id="selectKillerTitle" parameterType="String" resultMap="topicVO">
+        select id,title,resource,description,
+               imgUrl,appearance,popularity
+        from killerperks where title = #{title}
+    </select>
+</mapper>
